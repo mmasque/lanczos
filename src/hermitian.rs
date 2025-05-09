@@ -36,7 +36,7 @@ where
     /// let eigenvec = eigen.eigenvectors.column(0);
     ///  ```
     fn eigsh(&self, iterations: usize, order: Order) -> HermitianEigen<T> {
-        HermitianEigen::<T>::new(self, iterations, order, RealField::min_value().unwrap())
+        HermitianEigen::<T>::new(self, iterations, order, num::Float::min_positive_value())
     }
 }
 
